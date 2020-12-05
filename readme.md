@@ -7,4 +7,5 @@ All this modest bot wants to do is farm watermelons and he's looking for some he
 
 Add Watermelon Bot to your server now!
 
-https://discord.com/oauth2/authorize?client_id=783583560647966751&permissions=268435456&scope=bot
+<a href="https://discord.com/oauth2/authorize?client_id=783583560647966751&permissions=268435456&scope=bot
+" target="_blank">Watermelon Farmer Bot Link</a>
