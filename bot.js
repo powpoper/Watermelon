@@ -1,4 +1,6 @@
 require('dotenv').config();
+const express = require('express');
+const app = express();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -50,4 +52,10 @@ const checkIfWatermelonRoleExists = (msg) => {
         .catch(console.error); //Handle an error
     } 
 }
+
+app.get('/', (req,res) => {
+    res.send('server is running...')
+});
+app.listen(process.env.PORT || 3000)
+
 client.login(process.env.BOT_TOKEN);
