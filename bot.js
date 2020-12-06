@@ -19,7 +19,7 @@ const helpWatermelonFarmer = (msg) => {
     if(msg.content === '!help-watermelon-farmer') {
         const role = msg.guild.roles.cache.find(x => x.name === USER_ROLE);
         msg.member.roles.add(role);
-        msg.reply("Thanks for helping me out! Now whenever you type watermelon in a message I'll share my harvest with you. 🍉")
+        msg.reply("Thanks for helping me out! Now whenever you type 'watermelon' in a message I'll share my harvest with you. 🍉")
     }
 };
 
