@@ -1,6 +1,4 @@
 require('dotenv').config();
-//const express = require('express');
-//const app = express();
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -17,9 +15,9 @@ client.on('message', msg => {
     helpWatermelonFarmer(msg);
 });
 
-const helpWatermelonFarmer = (msg) => {
-    if(msg.content === '!help-watermelon-farmer'){
-        let role = msg.guild.roles.cache.find(x => x.name === USER_ROLE);
+const helpWatermelonFarmer = (msg) => {    
+    if(msg.content === '!help-watermelon-farmer') {
+        const role = msg.guild.roles.cache.find(x => x.name === USER_ROLE);
         msg.member.roles.add(role);
         msg.reply("Thanks for helping me out! Now whenever you type watermelon in a message I'll share my harvest with you. 🍉")
     }
@@ -27,15 +25,15 @@ const helpWatermelonFarmer = (msg) => {
 
 const reactWithWatermelon = (msg) => {
     const isWatermelonRole = msg.member.roles.cache.map(x => x.name).indexOf(USER_ROLE) > -1;
-
+    
     if (isWatermelonRole && msg.content.toLowerCase().indexOf("watermelon") > -1) {
         msg.react('🍉');
-      }
+    } 
 };
 const botReply = (msg) => {
     if(msg.mentions.members.map(x => x.user.username).indexOf("Watermelon Farmer Bot") > -1) {
         msg.reply("looks like you asked for me, but I'm a little busy right now. I can use your help though! Message '!help-watermelon-farmer' to help me harvest watermelons.")
-    }
+    } 
 };
 
 const checkIfWatermelonRoleExists = (msg) => {
@@ -48,14 +46,9 @@ const checkIfWatermelonRoleExists = (msg) => {
         },
         reason:"For people that like watermelon.",
         })
-        .then(role => console.log(`Created new role with name ${role.name}`)) //What to do when it has been created
+        .then(role => console.log(`Created new role with name ${role.name}`)) 
         .catch(console.error); //Handle an error
     } 
 }
-
-//app.get('/', (req,res) => {
-//    res.send('server is running...')
-//});
-//app.listen(process.env.PORT || 3000)
 
 client.login(process.env.BOT_TOKEN);
