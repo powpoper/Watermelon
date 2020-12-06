@@ -31,7 +31,7 @@ const reactWithWatermelon = (msg) => {
     } 
 };
 const botReply = (msg) => {
-    if(msg.mentions.members.map(x => x.user.username).indexOf("Watermelon Farmer Bot") > -1) {
+    if(msg.mentions.members.map(x => x.user.username).indexOf("Watermelon Farmer") > -1) {
         msg.reply("looks like you asked for me, but I'm a little busy right now. I can use your help though! Message '!help-watermelon-farmer' to help me harvest watermelons.")
     } 
 };
